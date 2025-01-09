@@ -23,7 +23,7 @@ const io = new Server(server, {
 });
 
 const corsOptions = {
-  origin: "http://localhost:5174", // Replace with your frontend's URL
+  origin: true, // Replace with your frontend's URL
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
   credentials: true, // if you need to send cookies across domains
@@ -56,7 +56,7 @@ io.on("connection", (socket) => {
   socket.on("move", (direction) => {
     console.log(`Rover moving ${direction}`);
     let message = io.emit("move", direction);
-    console.log("🚀 ~ socket.on ~ message:", message)
+    console.log("🚀 ~ socket.on ~ message:", message);
     // Process rover movement logic if needed
   });
 
