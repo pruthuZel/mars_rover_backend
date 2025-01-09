@@ -16,14 +16,14 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: true, // Replace with your frontend's URL
+    origin: "*", // Replace with your frontend's URL
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"], // Allow custom headers
   },
 });
 
 const corsOptions = {
-  origin: true, // Replace with your frontend's URL
+  origin: "*", // Replace with your frontend's URL
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
   credentials: true, // if you need to send cookies across domains
